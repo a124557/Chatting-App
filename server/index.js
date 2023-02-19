@@ -6,7 +6,9 @@ const app = express();
 const dotenv = require('dotenv');
 const User = require('./Schema.js');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
 app.use(bodyParser.json());
+app.use(cors());
 dotenv.config();
 
 app.get("/", (req, res) => {

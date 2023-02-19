@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
@@ -7,9 +7,31 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
 function SignUp() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch('http://localhost:3001/register', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ name, username, email, password }),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Sucess', data);
+        })
+        .catch((error) => {
+            console.log('Error', error);
+        });
+    };
     return (
         <Container>
         <Box
+        component = "form"
+        onSubmit={handleSubmit}
         sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -21,13 +43,13 @@ function SignUp() {
         }}
         >
             <Typography variant="h3" gutterBottom>Sign Up</Typography>
-            <TextField id="name" label="Name" variant="outlined" />
-            <TextField id="email" label="Email" variant="outlined" />
+            <TextField id="name" label="Name" variant="outlined" onChange={(e) => setName(e.target.value)} />
+            <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
             <TextField id="confirmEmail" label="Confirm Email" variant="outlined" />
-            <TextField id="userName" label="Username" variant="outlined" />
-            <TextField id="password" label="Password" variant="outlined" />
-            <TextField id="password" label="Confirm Password" variant="outlined" />
-            <Button variant="contained">Sign Up</Button>
+            <TextField id="username" label="Username" variant="outlined" onChange = {(e) => setUsername(e.target.value)}/>
+            <TextField id="password" label="Password" variant="outlined" onChange = {(e) => setPassword(e.target.value)}/>
+            <TextField id="confirmPassword" label="Confirm Password" variant="outlined" />
+            <Button variant="contained" type="submit" onClick={handleSubmit}>Sign Up</Button>
             <Typography variant="subtitle1" gutterBottom>Already have an account? 
             <Link href="/" variant="subtitle1" underline='none'> Login</Link>
             </Typography>
