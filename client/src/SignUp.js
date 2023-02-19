@@ -4,8 +4,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
-function Home() {
+function SignUp() {
     return (
         <Container>
         <Box
@@ -19,15 +20,21 @@ function Home() {
             width: '30ch',
         }}
         >
-            <Typography variant="h3" gutterBottom>Chat App</Typography>
-            <Typography variant="h5" gutterBottom>Login</Typography>
+            <Typography variant="h3" gutterBottom>Sign Up</Typography>
+            <TextField id="name" label="Name" variant="outlined" />
+            <TextField id="email" label="Email" variant="outlined" />
+            <TextField id="confirmEmail" label="Confirm Email" variant="outlined" />
             <TextField id="userName" label="Username" variant="outlined" />
             <TextField id="password" label="Password" variant="outlined" />
-            <Button variant="contained">Login</Button>
+            <TextField id="password" label="Confirm Password" variant="outlined" />
+            <Button variant="contained">Sign Up</Button>
+            <Typography variant="subtitle1" gutterBottom>Already have an account? 
+            <Link href="/" variant="subtitle1" underline='none'> Login</Link>
+            </Typography>
 
         </Box>
         </Container>
     )
 }
 
-export default Home;
+export default SignUp;
