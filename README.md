@@ -1,4 +1,4 @@
-#### Fullstack Chatting App
+## Fullstack Chatting App
 
 This project is a work in progress. It is created with React and Material UI on the frontend, and MongoDB, NodeJS, Express, JWT, and Bcrypt on the backend. User data is stored in a MongoDB database and passwords are hashed as a security measure. 
 
