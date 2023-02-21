@@ -63,8 +63,8 @@ function SignUp() {
             <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
             <TextField id="confirmEmail" label="Confirm Email" variant="outlined" />
             <TextField id="username" label="Username" variant="outlined" onChange = {(e) => setUsername(e.target.value)}/>
-            <TextField id="password" label="Password" variant="outlined" onChange = {(e) => setPassword(e.target.value)}/>
-            <TextField id="confirmPassword" label="Confirm Password" variant="outlined" onChange = {(e) => setConfirmPassword(e.target.value)} />
+            <TextField id="password" label="Password" variant="outlined" type="password" onChange = {(e) => setPassword(e.target.value)}/>
+            <TextField id="confirmPassword" label="Confirm Password" variant="outlined" type="password" onChange = {(e) => setConfirmPassword(e.target.value)} />
             <Button variant="contained" type="submit" onClick={handleSubmit}>Sign Up</Button>
             {!passwordsMatch && (<Typography color="error">Passwords do not match</Typography>)}
             <Typography variant="subtitle1" gutterBottom>Already have an account? 

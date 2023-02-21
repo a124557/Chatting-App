@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -55,7 +54,7 @@ function Login() {
             <Typography variant="h3" gutterBottom>Chat App</Typography>
             <Typography variant="h5" gutterBottom>Login</Typography>
             <TextField id="userName" label="Username" variant="outlined" onChange={(e) => setUsername(e.target.value)} />
-            <TextField id="password" label="Password" variant="outlined" onChange={(e) => setPassword(e.target.value)} />
+            <TextField id="password" label="Password" variant="outlined" type="password" onChange={(e) => setPassword(e.target.value)} />
             <Button variant="contained" onClick={handleSubmit}>Login</Button>
             <Typography variant="subtitle1" gutterBottom>Don't have an account? 
             <Link href="/signup" variant="subtitle1" underline='none'> Sign Up</Link>
