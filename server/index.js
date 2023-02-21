@@ -3,11 +3,18 @@ const PORT = 3001;
 const connectToDatabase = require('./Mongo.js');
 const bodyParser = require('body-parser');
 const app = express();
+const httpServer = require('http').createServer(app);
+const options = {    
+    cors: {
+        origin: '*',
+    }};
+const io = require("socket.io")(httpServer, options);
 const dotenv = require('dotenv');
 const User = require('./Schema.js');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const socketIo = require('socket.io');
 app.use(bodyParser.json());
 app.use(cors());
 dotenv.config();
@@ -65,7 +72,26 @@ app.post('/login', async (req, res) => {
     res.json({ token });
 });
 
+// Socket.io server
+/* const io = socketIo(server, {
+    cors: {
+        origin: '*',
+    }
+}); */
 
-app.listen(PORT, () => {
+io.on('connection', (socket) => {
+
+    socket.on('message', (msg) => {
+        console.log('message: ', msg);
+        io.emit('message', msg);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+});
+
+
+httpServer.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 }); 
