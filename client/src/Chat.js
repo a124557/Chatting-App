@@ -41,12 +41,13 @@ function Chat(props) {
         event.preventDefault();
         // Check to prevent sending empty messages to the server
         if(message.trim()) {
-            socket.emit('message', { username, message });
-            setMessages((messages) => [...messages, message]);
+            const newMessage = { username, message };
+            socket.emit('message', newMessage );
+            setMessages((messages) => [...messages, newMessage]);
             setMessage('');
-        }
-                    console.log('message emmited');
+            console.log('message emmited');
             console.log('current messages ', messages);
+        }
     };
 
     return (
@@ -64,17 +65,14 @@ function Chat(props) {
             }}
             >
             <ul>
-                {messages.map((message, index) => {
-                    return (<li key={index}>
-                        <strong>{message.username}:</strong> {message.message}
-                    </li>)
-                    }
-
-                )}
+                {messages.map((item, index) => (
+                    <li key={index}>{item.username + ": "}{item.message}</li>
+                ))}
             </ul>
             </Box>
             <TextField id="chatField" variant='outlined' 
-            label='Type something to chat' 
+            label='Type something to chat'
+            value={message} 
             onChange={(event) => setMessage(event.target.value)}></TextField>
             <Button variant="contained" onClick={handleMessageSubmit}>Send</Button>
             <Button variant="contained" onClick={handleLogout}>Logout</Button>
