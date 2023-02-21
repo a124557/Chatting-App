@@ -1,11 +1,12 @@
 ## Fullstack Chatting App
 
-This project is a work in progress. It is created with React and Material UI on the frontend, and MongoDB, NodeJS, Express, JWT, and Bcrypt on the backend. User data is stored in a MongoDB database and passwords are hashed as a security measure. 
+This project is fully functional but with only styling still a work in progress. This application allows users to register with and login with their credentials into a public chat room. It is created with React and Material UI on the frontend, and MongoDB, NodeJS, Express, JWT, and Bcrypt on the backend. User data is stored in a MongoDB database and passwords are hashed as a security measure. 
 
-Current working features are:
+Features:
 
 1. Allow user signups
 2. Allow user logins
+3. All users can chat with each other via a public chat room
 
 Signups and logins are handled by '/register' and '/login' APIs on the Node backend. 
 
