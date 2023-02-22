@@ -14,7 +14,7 @@ Signups and logins are handled by '/register' and '/login' APIs on the Node back
 
 1. Ensure NodeJS is installed on your system
 2. cd into the 'server' folder and run the command 'npm run start' to run the Node server
-3. cd into the 'client' folder and run the comman 'npm run start' once more to start the React frontend
+3. cd into the 'client' folder and run the command 'npm run start' once more to start the React frontend
 
 **Ports**:
 
