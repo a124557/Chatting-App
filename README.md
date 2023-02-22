@@ -10,5 +10,17 @@ Features:
 
 Signups and logins are handled by '/register' and '/login' APIs on the Node backend. 
 
+Build Instructions:
+
+1. Ensure NodeJS is installed on your system
+2. cd into the 'server' folder and run the command 'npm run start' to run the Node server
+3. cd into the 'client' folder and run the comman 'npm run start' once more to start the React frontend
+
+Ports:
+
+1. React frontend - 3000
+2. Node backend - 3001
+
+
 
 <img width="1076" alt="Screenshot 2023-02-19 at 10 13 51 PM" src="https://user-images.githubusercontent.com/72053963/220001297-a35f97b9-d58c-44f4-917f-9f0d4ff37b9a.png">
