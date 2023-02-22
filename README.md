@@ -2,7 +2,7 @@
 
 This project is fully functional but with only styling still a work in progress. This application allows users to register with and login with their credentials into a public chat room. It is created with React and Material UI on the frontend, and MongoDB, NodeJS, Express, JWT, and Bcrypt on the backend. User data is stored in a MongoDB database and passwords are hashed as a security measure. 
 
-Features:
+**Features**:
 
 1. Allow user signups
 2. Allow user logins
@@ -10,13 +10,13 @@ Features:
 
 Signups and logins are handled by '/register' and '/login' APIs on the Node backend. 
 
-Build Instructions:
+**Build Instructions**:
 
 1. Ensure NodeJS is installed on your system
 2. cd into the 'server' folder and run the command 'npm run start' to run the Node server
 3. cd into the 'client' folder and run the comman 'npm run start' once more to start the React frontend
 
-Ports:
+**Ports**:
 
 1. React frontend - 3000
 2. Node backend - 3001
