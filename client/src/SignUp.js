@@ -29,6 +29,7 @@ function SignUp() {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Sucess', data);
+                window.location.href="/";
             })
             .catch((error) => {
                 console.log('Error', error);
@@ -59,12 +60,12 @@ function SignUp() {
         }}
         >
             <Typography variant="h3" gutterBottom style={{display: "flex", justifyContent: "center"}}>Sign Up</Typography>
-            <TextField id="name" label="Name" variant="outlined" onChange={(e) => setName(e.target.value)} />
-            <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
-            <TextField id="confirmEmail" label="Confirm Email" variant="outlined" />
-            <TextField id="username" label="Username" variant="outlined" onChange = {(e) => setUsername(e.target.value)}/>
-            <TextField id="password" label="Password" variant="outlined" type="password" onChange = {(e) => setPassword(e.target.value)}/>
-            <TextField id="confirmPassword" label="Confirm Password" variant="outlined" type="password" onChange = {(e) => setConfirmPassword(e.target.value)} />
+            <TextField sx={{mb: 2}}  id="name" label="Name" variant="outlined" onChange={(e) => setName(e.target.value)} />
+            <TextField sx={{mb: 2}}  id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
+            <TextField sx={{mb: 2}}  id="confirmEmail" label="Confirm Email" variant="outlined" />
+            <TextField sx={{mb: 2}}  id="username" label="Username" variant="outlined" onChange = {(e) => setUsername(e.target.value)}/>
+            <TextField sx={{mb: 2}}  id="password" label="Password" variant="outlined" type="password" onChange = {(e) => setPassword(e.target.value)}/>
+            <TextField sx={{mb: 2}}  id="confirmPassword" label="Confirm Password" variant="outlined" type="password" onChange = {(e) => setConfirmPassword(e.target.value)} />
             <Button variant="contained" type="submit" onClick={handleSubmit}>Sign Up</Button>
             {!passwordsMatch && (<Typography color="error">Passwords do not match</Typography>)}
             <Typography variant="subtitle1" gutterBottom>Already have an account? 

@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import withAuth from './Login-Logout HOC';
 import io from 'socket.io-client';
+import { width } from '@mui/system';
 
 function Chat(props) {
     const [username, setUsername] = useState('');
@@ -51,31 +52,66 @@ function Chat(props) {
     };
 
     return (
-        <Container>
-            <p>Welcome to the Chat page, {username}! You have sucessfully logged in!</p>
+        <Container
+                style = {{
+            display: "flex",
+            flexDirection: 'column',
+            justifyContent: "center",
+            alignItems: "center",
+        height: "100vh"}
+        }
+        >
+            <Typography variant="h6" gutterBottom>Welcome to the chat page, {username}! You have sucessfully logged in!</Typography>
+            
+            <Box
+            sx = {{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '75%',
+                width: '75%'
+            }}
+            >
+            
             <Box
             sx={{
-            width: 300,
-            height: 300,
-            backgroundColor: '#F5F5',
+            width: '75%',
+            height: '75%',
+            borderRadius: '16px',
+            backgroundColor: '#f2f2f2',
+            mb: 2,
             '&:hover': {
-            backgroundColor: 'primary.main',
-            opacity: [0.9, 0.8, 0.7],
+            backgroundColor: '#f2f2f2'
             },
             }}
             >
-            <ul>
+            <ul
+            >
                 {messages.map((item, index) => (
-                    <li key={index}>{item.username + ": "}{item.message}</li>
+                    <li key={index} style={{textAlign: item.username != username ? 'right' : 'left'}}><b>{item.username + ": "}</b>{item.message}</li>
                 ))}
             </ul>
             </Box>
-            <TextField id="chatField" variant='outlined' 
+            <Box
+            sx = {{display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end '
+    }}
+            >
+                            <TextField id="chatField" variant='outlined' 
             label='Type something to chat'
             value={message} 
+            sx = {{
+        marginRight: 1
+    }}
             onChange={(event) => setMessage(event.target.value)}></TextField>
-            <Button variant="contained" onClick={handleMessageSubmit}>Send</Button>
+            <Button variant="contained" onClick={handleMessageSubmit} sx = {{display: 'flex', marginLeft: 1}}>Send</Button>
             <Button variant="contained" onClick={handleLogout}>Logout</Button>
+            </Box>
+
+
+            </Box>
         </Container>
     )
 }
