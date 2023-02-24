@@ -23,4 +23,4 @@ Signups and logins are handled by '/register' and '/login' APIs on the Node back
 
 
 
-<img width="1076" alt="Screenshot 2023-02-19 at 10 13 51 PM" src="https://user-images.githubusercontent.com/72053963/220001297-a35f97b9-d58c-44f4-917f-9f0d4ff37b9a.png">
+<img width="1421" alt="Screenshot 2023-02-24 at 2 17 54 PM" src="https://user-images.githubusercontent.com/72053963/221271892-5916fd5f-e0d6-4e96-a14b-fa779cccdee5.png">
