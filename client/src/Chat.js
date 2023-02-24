@@ -61,7 +61,7 @@ function Chat(props) {
         height: "100vh"}
         }
         >
-            <Typography variant="h6" gutterBottom>Welcome to the chat page, {username}! You have sucessfully logged in!</Typography>
+            <Typography variant="h6" gutterBottom>Welcome to the public chat room, {username}! You have sucessfully logged in!</Typography>
             
             <Box
             sx = {{
@@ -103,7 +103,8 @@ function Chat(props) {
             label='Type something to chat'
             value={message} 
             sx = {{
-        marginRight: 1
+        marginRight: 1,
+        width: "45ch"
     }}
             onChange={(event) => setMessage(event.target.value)}></TextField>
             <Button variant="contained" onClick={handleMessageSubmit} sx = {{display: 'flex', marginLeft: 1}}>Send</Button>
