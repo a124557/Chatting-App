@@ -26,7 +26,7 @@ function Login() {
 
         }
         catch (error) {
-            console.log(error);
+            console.log("Username or password incorrect ", error);
             // Error message can be shown here
         }
 
