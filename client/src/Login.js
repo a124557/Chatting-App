@@ -10,6 +10,7 @@ import axios from 'axios';
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loginState, setLoginstate] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -27,6 +28,7 @@ function Login() {
         }
         catch (error) {
             console.log("Username or password incorrect ", error);
+            setLoginstate("Username or password is incorrect");
             // Error message can be shown here
         }
 
@@ -59,6 +61,7 @@ function Login() {
             <Typography variant="subtitle1" gutterBottom>Don't have an account? 
             <Link href="/signup" variant="subtitle1" underline='none'> Sign Up</Link>
             </Typography>
+            <Typography variant='subtitle1' gutterBottom>{loginState}</Typography>
 
         </Box>
         </Container>
